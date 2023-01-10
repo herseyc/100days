@@ -17,4 +17,5 @@ print(f"The highest score in the class is: {max_score}")
 
 
 #easy way max() and min()
-print(max(student_scores))
+print(f"The highest score in the class is: {max(student_scores)}")
+print(f"The lowest score in the class is: {min(student_scores)}")
