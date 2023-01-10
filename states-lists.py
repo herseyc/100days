@@ -17,4 +17,22 @@ states_of_america.append("HerseyLand")
 print(f"The last state on the list is now: {states_of_america[-1]}")
 print(f"Now there are {len(states_of_america)} states in the list.")
 
+
+#List of list
 dirty_dozen = ["Strawberries", "Spinach", "Kale", "Nectarines", "Apples", "Grapes", "Peaches", "Cherries", "Pears", "Tomatoes", "Celery", "Potatoes"]
+
+# Separate list of fruits and vegetables
+fruits = ["Strawberries", "Nectarines", "Apples", "Grapes", "Peaches", "Cherries", "Pears"]
+vegetables = ["Spinach", "Kale", "Tomatoes", "Celery", "Potatoes"]
+
+# Create a list of list in the pantry
+pantry = [fruits, vegetables]
+
+print(pantry)
+
+print(f"There are {len(pantry)} shelves in the pantry")
+print(f"There are {len(pantry[0])} fruits in the pantry.")
+print(f"There are {len(pantry[1])} vegetables in the pantry.")
+
+print(f"There are {pantry[0][2]} in the pantry.")
+
