@@ -33,6 +33,22 @@ print(pantry)
 print(f"There are {len(pantry)} shelves in the pantry")
 print(f"There are {len(pantry[0])} fruits in the pantry.")
 print(f"There are {len(pantry[1])} vegetables in the pantry.")
+print("Putting a Watermelon in the Pantry")
+pantry[0].append("Watermelons")
+print(f"Now there are {len(pantry[0])} fruits in the pantry.")
 
 print(f"There are {pantry[0][2]} in the pantry.")
 
+counter = 0
+#use for loop to list everyting in the pantry
+for shelves in pantry:
+    if counter == 0:
+        print(f"Shelf {counter} - Fruits:")
+        counter += 1
+    else:
+        print(f"Shelf {counter} - Vegetables:")
+        counter += 1
+    list_index = 0
+    for food in shelves:
+        print(f"    {list_index}  {food}")
+        list_index += 1
