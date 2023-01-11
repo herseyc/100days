@@ -2,13 +2,13 @@
 # Python Built-in Functions
 # https://docs.python.org/3/library/functions.html
 
-# print() and len() are built in functions
+# print() and len() are examples of Python built in functions
 print("Hello")
 num_char = len("Hello")
 print(num_char)
 
-# Simple Function
-# Define the function
+# Create a Simple Function
+# Define the function using def
 def my_function():
   #What the function does
   print("Hello")
