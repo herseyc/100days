@@ -17,3 +17,9 @@ print(f"This is the random float * 5: {d}")
 c = int(round(d))
 print(f"This is using the random float to create a random int between 0 and 5: {c}")
 
+
+# Use random.choice to choose an item in a list at random
+list_of_stuff = ["Hello", "Good Bye", "Nice to See You", "Been a While"]
+greeting = random.choice(list_of_stuff)
+print(greeting)
+
