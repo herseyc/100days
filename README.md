@@ -4,3 +4,5 @@
 Course: https://www.udemy.com/course/100-days-of-code
 
 Just documenting my 100 days of code.
+
+Python Built in Functions: https://docs.python.org/3/library/functions.html
