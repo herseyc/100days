@@ -1,9 +1,14 @@
 
 # Dictionary of machine resources
-machine_resources = {"water": 1000, "milk": 2000, "coffee": 500, "money": 0 }
+machine_resources = {
+    "water": 1000,
+    "milk": 2000,
+    "coffee": 500,
+    "money": 0,
+}
 
 # Dictionary of coffee types
-coffee_menu = {"latte": {"water": 250, "milk": 100, "coffee": 14, "cost": 2.50},
+COFFEE_MENU = {"latte": {"water": 250, "milk": 100, "coffee": 14, "cost": 2.50},
          "cappuccino": {"water": 200, "milk": 150, "coffee": 24, "cost": 3.00 },
          "expresso": {"water": 50, "milk": 0, "coffee": 18, "cost": 1.50 },
                }
@@ -19,34 +24,34 @@ def report_resources():
 def check_resources(order_resource):
     # print(order)
     for resource in machine_resources:
-        if resource != "money" and machine_resources[resource] < coffee_menu[order_resource][resource]:
+        if resource != "money" and machine_resources[resource] < COFFEE_MENU[order_resource][resource]:
             print(f"Sorry there is not enough {resource}")
             return False
     return True
 
 
 def process_coins(pay_order):
-    print(f"A {pay_order} cost ${round(coffee_menu[pay_order]['cost'], 2):.2f}. Please insert coins.")
+    print(f"A {pay_order} cost ${round(COFFEE_MENU[pay_order]['cost'], 2):.2f}. Please insert coins.")
     quarters = int(input("How many quarters? "))
     dimes = int(input("How many dimes? "))
     nickles = int(input("How many nickles? "))
     pennies = int(input("How many pennies? "))
     total = (0.25 * quarters) + (.10 * dimes) + (.05 * nickles) + (.01 * pennies)
 
-    if total < coffee_menu[pay_order]["cost"]:
+    if total < COFFEE_MENU[pay_order]["cost"]:
         print(f"Sorry that's not enough money. Refunding ${round(total, 2):.2f}")
         return False
-    elif total > coffee_menu[pay_order]["cost"]:
-        print(f"That was too much money. A {order} cost ${round(coffee_menu[pay_order]['cost'], 2):.2f}, your refund is ${round(total - coffee_menu[pay_order]['cost'], 2):.2f}")
+    elif total > COFFEE_MENU[pay_order]["cost"]:
+        print(f"That was too much money. A {order} cost ${round(COFFEE_MENU[pay_order]['cost'], 2):.2f}, your refund is ${round(total - COFFEE_MENU[pay_order]['cost'], 2):.2f}")
 
     return True
 
 
 def deduct_resources(deduct_order):
-    machine_resources['water'] = machine_resources['water'] - coffee_menu[deduct_order]['water']
-    machine_resources['milk'] = machine_resources['milk'] - coffee_menu[deduct_order]['milk']
-    machine_resources['coffee'] = machine_resources['coffee'] - coffee_menu[deduct_order]['coffee']
-    machine_resources['money'] = machine_resources['money'] + coffee_menu[deduct_order]['cost']
+    machine_resources['water'] = machine_resources['water'] - COFFEE_MENU[deduct_order]['water']
+    machine_resources['milk'] = machine_resources['milk'] - COFFEE_MENU[deduct_order]['milk']
+    machine_resources['coffee'] = machine_resources['coffee'] - COFFEE_MENU[deduct_order]['coffee']
+    machine_resources['money'] = machine_resources['money'] + COFFEE_MENU[deduct_order]['cost']
     return True
 
 
