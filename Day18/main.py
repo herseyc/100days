@@ -4,6 +4,7 @@ import turtle as t
 
 
 tim = t.Turtle()
+# set turtle to RGB color mode
 t.colormode(255)
 
 # Generate a random RGB color - Python Tuples
@@ -11,6 +12,8 @@ t.colormode(255)
 # my_tuple(1, 2, 3)
 # my_tuple[0] is equal to 1
 # you can convert a tuple to a list using my_list = list(my_tuple)
+
+# Generate a random color and return a tuple
 def random_color():
     r = random.randint(0, 255)
     g = random.randint(0, 255)
@@ -25,7 +28,8 @@ def draw_spirograph(size_of_gap):
      tim.circle(100)
      tim.setheading(tim.heading() + size_of_gap)
 
-tim.shape("turtle")
+#tim.shape("turtle")
+
 #tim.color("purple")
 
 # Draw a square
@@ -64,7 +68,7 @@ tim.speed("fastest")
 tim.hideturtle()
 
 #Spirograph
-draw_spirograph(2)
+draw_spirograph(10)
 
 
 screen = t.Screen()
