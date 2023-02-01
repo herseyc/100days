@@ -2,7 +2,7 @@ import pandas
 # Keyword Method with iterrows()
 # {new_key:new_value for (index, row) in df.iterrows()}
 
-name = input("What is your name? ")
+name = input("Enter a word: ")
 
 #for (index, row) in data.iterrows():
 #    print(row.letter)
@@ -10,7 +10,7 @@ name = input("What is your name? ")
 #TODO 1. Create a dictionary in this format:
 #{"A": "Alfa", "B": "Bravo"}
 data = pandas.read_csv("nato_phonetic_alphabet.csv")
-code_dict = {row.letter:row.code for (index, row) in data.iterrows()}
+code_dict = {row.letter: row.code for (index, row) in data.iterrows()}
 
 # create a list converting each letter of the input name to the code
 #TODO 2. Create a list of the phonetic code words from a word that the user inputs.
