@@ -1,5 +1,8 @@
 import datetime
 
+LUNAR_CYCLE = 29.53058770576
+LUNAR_ORBIT = 27.32
+
 moon_phases = [
     "🌑 New Moon",
     "🌒 Waxing Crescent",
@@ -11,27 +14,20 @@ moon_phases = [
     "🌘 Waning Crescent"
 ]
 
-LUNAR_CYCLE = 29.53058770576
-LUNAR_ORBIT = 27.32
-
 currentdate = datetime.date.today()
-#currentdate = datetime.date(year=2017, month=3, day=1)
-jdn = currentdate.toordinal() + 1721424.5
+jdn = currentdate.toordinal() + 1721424.5  # convert to julian
 print(f"JDN = {jdn}")
 
 # 2451549.5 is 01/6/2000 - and the moon was new
 newmoondate = datetime.date(year=2000, month=1, day=6)
-nmd = newmoondate.toordinal() + 1721424.5
+nmd = newmoondate.toordinal() + 1721424.5  # convert to julian
 print(f"NMD = {nmd}")
 
-
-dsn = jdn - nmd
+dsn = jdn - nmd  # Number of days since known new moon
 print(f"Days Since Jan 6, 2000 New Moon = {dsn}")
 
 newmoons = (dsn / LUNAR_CYCLE) % 1
-print(f"Since last new moon = {newmoons}")
-#newmoons = newmoons % 1
-#print(f"New Moons Fractional = {newmoons}")
+#print(f"Since last new moon = {newmoons}")
 
 lunar_day = round(newmoons * LUNAR_CYCLE, 3)
 print(f"It has been {lunar_day} days since the last New Moon")
