@@ -86,5 +86,4 @@ generate_button.grid(column=2, row=3)
 add_button = Button(text="Add", width=36, command=save_password)
 add_button.grid(column=1, row=4, columnspan=2)
 
-
 window.mainloop()
