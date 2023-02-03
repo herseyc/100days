@@ -92,3 +92,4 @@ reset_button.grid(column=2, row=2)
 check_marks = Label(text=CHECKMARK, bg=YELLOW, fg=GREEN)
 check_marks.grid(column=1, row=3)
 
+window.mainloop()
